@@ -2,7 +2,7 @@
 import { googleProvider, auth } from "../db/firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import google from "./search.png" 
+import google from "./search.png";
 import Image from "next/image";
 export default function Login() {
   const router = useRouter();
@@ -20,7 +20,8 @@ export default function Login() {
           }}
           className="border-0 p-3 w-full flex flex-row items-center justify-center gap-3 rounded-xl shadow-xl bg-blue-300 hover:bg-blue-400 transition-all duration-300"
         >
-          <Image src={google} width={35}/><h1 className="text-lg font-bold  h-full">Google</h1>
+          <Image alt="asd" src={google} width={35} />
+          <h1 className="text-lg font-bold  h-full">Google</h1>
         </button>
       </form>
     </main>
