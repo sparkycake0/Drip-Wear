@@ -5,7 +5,7 @@ import { productsRef } from "./db/firebase";
 import Link from "next/link";
 import PurchaseForm from "./components/PurchaseForm";
 import Image from "next/image";
-import buy from './assets/grocery-store.png'
+import buy from "./assets/grocery-store.png";
 interface productData {
   name: string;
   desc: string;
@@ -49,26 +49,31 @@ export default function Home() {
     <div className="flex items-center justify-center">
       <div className="p-4 grid grid-cols-2 gap-4 h-96 lg:grid-cols-4 lg:gap-5 place-items-center w-max">
         {productsContainer.map((product, index) => (
-          <div key={`${product.name}-${index}`} className="shadow-xl rounded-md p-5 flex flex-col justify-between bg-white w-64 min-h-96 gap-5">
+          <div
+            key={`${product.name}-${index}`}
+            className="shadow-xl rounded-md p-5 flex flex-col justify-between bg-white w-64 min-h-96 gap-5"
+          >
             <div className="w-full flex flex-col gap-6">
               <div className="flex flex-col items-center">
-                <Link href={`/products/${product.id}`} className="rounded-t-3xl w-8/12">
-                  <img
-                    src={product.img as any}
-                    
-                  />
+                <Link
+                  href={`/products/${product.id}`}
+                  className="rounded-t-3xl w-8/12"
+                >
+                  <img src={product.img as any} />
                 </Link>
               </div>
               <div className="text-xl font-semibold">{product.name}</div>
             </div>
             <div className="flex flex-col items-start gap-1 ">
-              
-              <button className="flex flex-row w-full border-0 justify-between items items-center bg-blue-300 p-2 rounded-md" onClick={() => togglePurchaseForm(product.id)}>
+              <button
+                className="flex flex-row w-full border-0 justify-between items items-center bg-blue-300 p-2 rounded-md"
+                onClick={() => togglePurchaseForm(product.id)}
+              >
                 <h1 className="font-bold text-2xl">${product.price}</h1>
                 <div className="items-end bg-blue-400 p-2 rounded-full">
-                  <Image src={buy} width={25} />
+                  <Image alt="asd" src={buy} width={25} />
                 </div>
-              </button >
+              </button>
               {selectedProduct === product.id && (
                 <PurchaseForm
                   purchaseFormShow={true}

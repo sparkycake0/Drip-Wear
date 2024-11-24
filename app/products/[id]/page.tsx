@@ -10,9 +10,7 @@ interface ProductData {
   img: string;
 }
 
-export default function GamePage({
-  params,
-}: { params: { id: string } } | Promise<{ params: { id: string } }>) {
+export default function GamePage({ params }: { params: { id: string } }) {
   const [product, setProduct] = useState<ProductData | null>(null);
 
   const fetchGame = async () => {
