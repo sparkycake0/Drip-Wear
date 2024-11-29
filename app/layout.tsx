@@ -14,9 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`flex flex-col bg-neutral-200 text-black`}>
+      <body
+        className={`flex flex-col bg-background text-foreground font-extrabold`}
+      >
         <Provider />
-        <Navbar/>
+        <Navbar />
         {children}
       </body>
     </html>

@@ -57,10 +57,9 @@ export default function addGames() {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="border-0 w-full h-screen flex flex-col items-center justify-center lg:w-5/6">
+    <div>
+      <div>
         <form
-          className="flex flex-col w-5/6 h-5/6 border-0 gap-5 p-8 items-center justify-center rounded-xl shadow-0xl xl:w-max h-max"
           onSubmit={(e) => {
             e.preventDefault();
             addProduct();
@@ -72,32 +71,32 @@ export default function addGames() {
             });
           }}
         >
-          <h1 className="text-5xl ">Add product</h1>
-          <div className="flex flex-col items-center justify-center w-full gap-5 py-8">
+          <h1>Add product</h1>
+          <div>
             <input
               type="text"
               onChange={(e) => {
                 setProductData({ ...productData, name: e.target.value });
               }}
               value={productData.name}
-              className="p-2 rounded-lg w-full leading-9 shadow-xl xl:w-96"
             />
-            <input
+            <textarea
               type="text"
               onChange={(e) => {
                 setProductData({ ...productData, desc: e.target.value });
               }}
               value={productData.desc}
-              className="p-2 rounded-lg w-full leading-9 shadow-xl xl:w-96"
             />
 
             <input
               type="number"
               onChange={(e) => {
-                setProductData({ ...productData, price: e.target.value as any });
+                setProductData({
+                  ...productData,
+                  price: e.target.value as any,
+                });
               }}
               value={productData.price}
-              className="p-2 rounded-lg w-full leading-9 shadow-xl xl:w-96"
             />
             <input
               type="file"
@@ -106,15 +105,9 @@ export default function addGames() {
                   setProductData({ ...productData, img: e.target.files[0] });
                 }
               }}
-              className="bg-white p-3 rounded-lg shadow-xl"
             />
           </div>
-          <button
-            type="submit"
-            className="bg-blue-300 hover:bg-blue-400 transition-all p-4 w-36 rounded-xl text-xl font-bold shadow-xl"
-          >
-            Submit
-          </button>
+          <button type="submit">Submit</button>
           <h1 className="text-5xl py-10">Delete product</h1>
           <div className="flex flex-row gap-10">
             <input
@@ -125,7 +118,7 @@ export default function addGames() {
               }}
               className="p-2 rounded-lg w-max leading-9 shadow-xl"
             />
-            <button onClick={() => deleteProduct()} className="bg-red-400 hover:bg-red-500 transition-all p-4 w-36 rounded-xl text-xl font-bold shadow-xl">Delete</button>
+            <button onClick={() => deleteProduct()}>Delete</button>
           </div>
         </form>
       </div>

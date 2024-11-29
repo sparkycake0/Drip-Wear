@@ -1,10 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
 
 * {
   scrollbar-width: none;
   border-color: #000;
+  font-family: Parkinsans;
 }
 *::-webkit-scrollbar {
   display: none;

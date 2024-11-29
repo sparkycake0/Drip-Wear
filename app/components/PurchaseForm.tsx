@@ -37,7 +37,7 @@ export default function PurchaseForm({
         <button
           type="button"
           onClick={() => setPurchaseFormShow(false)}
-          className="bg-neutral-400 text-white py-2 px-4 mt-0 rounded-xl hover:bg-neutral-600 transition-all"
+          className="bg-ascent text-background py-2 px-4 mt-0 rounded-xl hover:scale-105 transition-all"
         >
           X
         </button>
@@ -54,6 +54,7 @@ export default function PurchaseForm({
               onChange={(e) =>
                 setCustomerData({ ...customerData, name: e.target.value })
               }
+              required
               className="bg-neutral-200 h-10 rounded-lg placeholder:text-neutral-900 p-2 hover:bg-neutral-300 focus:bg-neutral-400 outline-none transition-all"
               placeholder="Name & Last Name"
             />
@@ -62,6 +63,7 @@ export default function PurchaseForm({
               onChange={(e) =>
                 setCustomerData({ ...customerData, phoneNum: e.target.value })
               }
+              required
               className="bg-neutral-200 h-10 rounded-lg placeholder:text-neutral-900 p-2 hover:bg-neutral-300 focus:bg-neutral-400 outline-none transition-all"
               placeholder="Phone Number"
             />
@@ -70,11 +72,17 @@ export default function PurchaseForm({
               onChange={(e) =>
                 setCustomerData({ ...customerData, address: e.target.value })
               }
+              required
               className="bg-neutral-200 h-10 rounded-lg placeholder:text-neutral-900 p-2 hover:bg-neutral-300 focus:bg-neutral-400 outline-none transition-all"
               placeholder="Home Address"
             />
             <div className="flex flex-col justify-center items-center">
-              <button type="submit" className="bg-blue-300 w-max p-3 rounded-xl hover:bg-blue-400 active:scale-90 transition-all">Submit</button>
+              <button
+                type="submit"
+                className="bg-ascent text-background w-max p-3 rounded-xl hover:scale-105 active:scale-90 transition-all"
+              >
+                Submit
+              </button>
             </div>
           </form>
         </div>

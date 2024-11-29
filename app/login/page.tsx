@@ -10,18 +10,17 @@ export default function Login() {
     signInWithPopup(auth, googleProvider).then(() => router.push("/"));
   };
   return (
-    <main className="w-screen h-screen flex items-center justify-center ">
-      <form className="border-0 p-5 flex flex-col items-center justify-center gap-5 rounded-2xl shadow-2xl">
-        <h1 className="text-2xl">Log in with</h1>
+    <main>
+      <form>
+        <h1>Log in with</h1>
         <button
           onClick={(e) => {
             e.preventDefault();
             signInWithGoogle();
           }}
-          className="border-0 p-3 w-full flex flex-row items-center justify-center gap-3 rounded-xl shadow-xl bg-blue-300 hover:bg-blue-400 transition-all duration-300"
         >
           <Image alt="asd" src={google} width={35} />
-          <h1 className="text-lg font-bold  h-full">Google</h1>
+          <h1>Google</h1>
         </button>
       </form>
     </main>
