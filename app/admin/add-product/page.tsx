@@ -81,7 +81,6 @@ export default function addGames() {
               value={productData.name}
             />
             <textarea
-              type="text"
               onChange={(e) => {
                 setProductData({ ...productData, desc: e.target.value });
               }}
